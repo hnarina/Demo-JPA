@@ -1,0 +1,59 @@
+package example.jpa;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+
+public class EmployeeTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
+		
+		EntityManager em = emf.createEntityManager();
+		EmployeeService service = new EmployeeService(em);
+		em.getTransaction().begin();
+	    Address address = new Address();
+	    address.setId(123);
+	    address.setLine("talwade");		
+	    Department dept1 = new Department();
+	    dept1.setId(1);
+	    dept1.setName("java");
+	    Department dept2 = new Department();
+	    dept2.setId(2);
+	    dept2.setName(".Net");
+	    List<Employee> employees1 = new ArrayList<Employee>();
+	    Employee emp1 = service.createEmployee(50948, "Sagar", 90000 , address);
+	    Employee emp2 = service.createEmployee(50949, "Hari", 80000 , address);
+	    List<Employee> employees2 = new ArrayList<Employee>();
+	    Employee emp3 = service.createEmployee(50950, "Meenal", 70000 , address);
+	    Employee emp4 = service.createEmployee(50951, "Haneef", 60000 , address);
+	    employees1.add(emp1);
+	    employees1.add(emp2);
+	    employees2.add(emp3);
+	    employees2.add(emp4);
+	    dept1.setEmployees(employees1);
+	    dept2.setEmployees(employees2);
+		em.getTransaction().commit();
+/*System.out.println("Persisted "+emp);
+		
+		emp= service.findEmployee(50948);
+		System.out.println("Found "+emp);
+		
+		em.getTransaction().begin();
+		emp =service.raiseEmployeeSalary(50948, 20000);
+		em.getTransaction().commit();
+		System.out.println("Updated "+emp);*/
+		em.close();
+		emf.close();
+	}
+
+}

@@ -1,0 +1,12 @@
+package demo.repo;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import demo.beans.*;
+
+
+public interface WalletRepo extends JpaRepository<Customer, Integer>{
+	public boolean save(Customer c);
+	public Customer findOne(String mobile);
+	public boolean update(Customer c);
+	
+	}

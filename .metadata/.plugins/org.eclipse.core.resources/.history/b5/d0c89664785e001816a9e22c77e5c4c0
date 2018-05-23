@@ -1,0 +1,28 @@
+package example.jpa;
+
+
+import javax.persistence.*;
+
+import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+
+public class EmployeeTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/*EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
+		EntityManager em = emf.createEntityManager();
+		EmployeeService service = new EmployeeService(em);*/
+		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("beanconfig.xml");
+	    EmployeeService service = ctx.getBean("service", EmployeeService.class);
+	    Address address = new Address(1, "talawade");
+	    Department dept = new Department(1,"java");
+	    Employee e = new Employee(123,"Hari",60000,address,dept);
+	    service.createEmployee(e)  ;
+		ctx.close();
+	}
+
+}

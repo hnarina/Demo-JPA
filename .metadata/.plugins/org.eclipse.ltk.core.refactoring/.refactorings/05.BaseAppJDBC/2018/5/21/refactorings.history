@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 packages to &apos;08.WalletSpringData/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;05.BaseAppJDBC&apos;&#x0D;&#x0A;- Destination element: &apos;08.WalletSpringData/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     05.BaseAppJDBC/src/main/java/demo.BaseAppJDBC&#x0D;&#x0A;     05.BaseAppJDBC/src/main/java/demo.services&#x0D;&#x0A;     05.BaseAppJDBC/src/main/java/demo.beans&#x0D;&#x0A;     05.BaseAppJDBC/src/main/java/demo.repo" description="Copy packages" destination="=08.WalletSpringData/src\/main\/java" element1="/src\/main\/java&lt;demo.BaseAppJDBC" element2="/src\/main\/java&lt;demo.services" element3="/src\/main\/java&lt;demo.beans" element4="/src\/main\/java&lt;demo.repo" flags="589830" fragments="4" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1527077443383" version="1.0"/>
+</session>
